@@ -57,7 +57,7 @@ router.get('/', async (req, res) => {
 
     const orderBy = sort === 'price' ? 'rent ASC, deposit ASC' : 'distance ASC';
     const sql = `
-      SELECT id, title, address, lat, lng, deposit, rent, area, room_type, image_path,
+      SELECT id, title, address, lat, lng, lawd_cd, deposit, rent, area, room_type, image_path,
              (6371000 * ACOS(LEAST(1,
                COS(RADIANS(?)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(?)) +
                SIN(RADIANS(?)) * SIN(RADIANS(lat))))) AS distance

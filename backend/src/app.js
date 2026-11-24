@@ -12,6 +12,7 @@ app.use('/api/listings', require('./routes/listings'));
 app.use('/api', require('./routes/auth'));            // SFR-001 POST /api/auth/:provider, GET /api/me
 app.use('/api/favorites', require('./routes/favorites')); // SFR-001 마이페이지 찜
 app.use('/api/prices', require('./routes/prices'));   // SFR-005 그래프용 price_cache 조회
+app.use('/api/places', require('./routes/places'));
 
 // 에러 처리 (multer 용량/형식 오류 포함)
 app.use((err, req, res, next) => {
